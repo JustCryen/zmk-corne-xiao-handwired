@@ -1,71 +1,113 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+&mt { flavor = "tap-preferred"; };
 
 / {
     combos {
         compatible = "zmk,combos";
-        combo_studio_unlock {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&studio_unlock>;
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <21 20>;
         };
     };
-};
 
-/ {
+    behaviors {
+        hrm_l: hrm_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Home Row Mods Left";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <36 37 38 39 40 41 6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        hrm_r: hrm_r {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Home Row Mods Right";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 36 37 38 39 40 41>;
+            hold-trigger-on-release;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "base";
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            display-name = "Base";
 
-// -------------------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |                    |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |                    |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |  MUTE  |  |        |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |                    | ENT | RSE  | ALT |
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  \   |
+            //                    | LALT| LWR | SPC |   | BSPC| RSE  | RALT|
+
             bindings = <
-&kp TAB   &kp Q &kp W &kp E    &kp R &kp T                      &kp Y   &kp U &kp I     &kp O   &kp P    &kp BSPC
-&kp LCTRL &kp A &kp S &kp D    &kp F &kp G                      &kp H   &kp J &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT &kp Z &kp X &kp C    &kp V &kp B     &kp C_MUTE &none &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp ESC
-                      &kp LGUI &mo 1 &kp SPACE                  &kp RET &mo 2 &kp LALT
+&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y          &kp U          &kp I            &kp O           &kp P             &kp DELETE
+&kp LSHFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H          &hrm_r RALT J  &hrm_r RSHIFT K  &hrm_r RCTRL L  &hrm_r RGUI SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N          &kp M          &kp COMMA        &kp DOT         &kp FSLH          &kp BSLH
+                         &kp LALT  &sl 1  &kp SPACE    &kp BACKSPACE  &sl 2          &kp RALT
             >;
         };
 
         lower_layer {
-            display-name = "lower";
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            display-name = "Lower";
 
-// ------------------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |                    |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |                    | LFT | DWN |  UP | RGT |     |  F12 |
-// | SHFT | F1  | F2  | F3  | F4  | F5  |  boot  |  |        |  F6 | F7  | F8  | F9  | F10 |  F11 |
-//                    | GUI |     | SPC |                    | ENT |     | ALT |
+            // -----------------------------------------------------------------------------------------
+            // |GRESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
+            // |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
+            // |      |BTCLR| BT0 | BT1 | BT2 | BOOT|   | BOOT|     |     |     |     |      |
+            //                    | GUI |     |     |   |     |     |     |
+
             bindings = <
-&kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0  &kp BSPC
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans  &kp F12
-&kp LSHFT  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &bootloader &none &kp F6   &kp F7   &kp F8 &kp F9    &kp F10 &kp F11
-                                     &kp LGUI     &trans       &kp SPACE                      &kp RET  &trans   &kp LALT
+&gresc  &kp N1      &kp N2        &kp N3        &kp N4        &kp N5         &kp N6       &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans  &trans      &trans        &trans        &trans        &trans         &kp LEFT     &kp DOWN  &kp UP  &kp RIGHT  &none   &none
+&trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &out OUT_TOG  &bootloader    &bootloader  &none     &none   &none      &none   &none
+                                  &kp LGUI      &trans        &trans         &trans       &trans    &trans
             >;
+
+            label = "Lowered";
         };
 
         raise_layer {
-            display-name = "raise";
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            display-name = "Raised";
 
-// ------------------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |                    |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |                    |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |        |  |  boot  |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |                    | ENT |     | ALT |
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  +  |  7  |  8  |  9  |  )  |      |
+            // | SHFT |     |     |     |     |     |   |  -  |  4  |  5  |  6  |  \  |  `   |
+            // | CTRL |     |     |     |     |     |   |  0  |  1  |  2  |  3  |  |  |  ~   |
+            //                    |     |     |     |   | DEL |     |     |
+
             bindings = <
-&kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-&kp LCTRL &trans   &trans &trans   &trans   &trans                      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-&kp LSHFT &trans   &trans &trans   &trans   &trans    &none &bootloader &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                          &kp LGUI &trans   &kp SPACE                   &kp RET   &trans    &kp LALT
+&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp EQUAL                   &mt F7 KP_NUMBER_7  &mt F8 KP_NUMBER_8  &mt F9 KP_NUMBER_9  &mt F10 RPAR  &trans
+&trans  &none     &none   &none     &none     &none        &kp MINUS                   &mt F4 KP_NUMBER_4  &mt F5 KP_NUMBER_5  &mt F6 KP_NUMBER_6  &mt F11 BSLH  &kp GRAVE
+&trans  &none     &none   &none     &none     &none        &mt KP_NUMLOCK KP_NUMBER_0  &mt F1 KP_NUMBER_1  &mt F2 KP_NUMBER_2  &mt F3 KP_NUMBER_3  &mt F12 PIPE  &kp TILDE
+                          &trans    &trans    &trans       &trans                      &trans              &trans
             >;
+        };
+
+        adjust_layer {
+            bindings = <
+&trans  &none  &none  &none   &none           &kp LESS_THAN           &kp GREATER_THAN       &none            &none   &none  &none  &trans
+&trans  &none  &none  &none   &kp LEFT_BRACE  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &none   &none  &none  &none
+&trans  &none  &none  &none   &none           &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &none            &none   &none  &none  &none
+                      &trans  &trans          &trans                  &trans                 &trans           &trans
+            >;
+
+            label = "Adjust";
         };
 
         extra1 {
@@ -76,6 +118,15 @@
         extra2 {
             display-name = "extra2";
             status = "reserved";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Adjust_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
