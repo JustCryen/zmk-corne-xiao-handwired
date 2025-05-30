@@ -1,0 +1,1 @@
+**zmk-corne-xiao-handwired** based on [zmk-config-corne-xiao](https://github.com/friction07/zmk-config-corne-xiao.git) by friction07.
