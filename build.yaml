@@ -22,7 +22,7 @@ include:
 
 # Revision 2
   - board: xiao_ble//zmk
-    shield: corne_xiao_v2_left oled_adapter_seeeduino_xiao_ble_128x32
+    shield: corne_xiao_v2_left nice_view
     #cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Xiao_Left"
     #artifact-name: xiao_corne_left
     snippet: studio-rpc-usb-uart
