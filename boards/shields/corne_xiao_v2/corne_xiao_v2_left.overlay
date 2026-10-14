@@ -11,15 +11,15 @@
         ;
 };
 
+nice_view_spi: &spi2 {
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&xiao_d 9 GPIO_ACTIVE_HIGH>;
+};
+
 &nice_view_spi {
     sharp,ls0xx@0 {
         spi-max-frequency = <4000000>;
     };
-};
-
-nice_view_spi: &spi2 {
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&xiao_d 9 GPIO_ACTIVE_HIGH>;
 };
 
 // &left_encoder {
