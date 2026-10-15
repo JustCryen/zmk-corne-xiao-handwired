@@ -11,7 +11,27 @@
         ;
 };
 
+&pinctrl {
+    spi2_no_miso: spi2_no_miso {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 15)>;
+        };
+    };
+    spi2_no_miso_sleep: spi2_no_miso_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 15)>;
+            low-power-enable;
+        };
+    };
+};
+
 nice_view_spi: &spi2 {
+    status = "okay";
+    pinctrl-0 = <&spi2_no_miso>;
+    pinctrl-1 = <&spi2_no_miso_sleep>;
+    pinctrl-names = "default", "sleep";
     cs-gpios = <&xiao_d 9 GPIO_ACTIVE_HIGH>;
     clock-frequency = <4000000>;
 };
