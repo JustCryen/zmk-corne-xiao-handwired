@@ -57,7 +57,7 @@
         bt_prev_out: bt_prev_out {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_PREV_OUT";
-            bindings = <&out OUT_TOG>, <&bt BT_PRV>;
+            bindings = <&out_tog_m>, <&bt_prev_m>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
@@ -69,13 +69,39 @@
         bt_next_clear: bt_next_clear {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_NEXT_CLEAR";
-            bindings = <&bt BT_CLR>, <&bt BT_NXT>;
+            bindings = <&bt_clr_m>, <&bt_next_m>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <28 36 37 38 39 40 41>;
+        };
+    };
+
+    macros {
+        bt_next_m: bt_next_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_NXT>;
+        };
+
+        bt_prev_m: bt_prev_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_PRV>;
+        };
+
+        bt_clr_m: bt_clr_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_CLR>;
+        };
+
+        out_tog_m: out_tog_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_TOG>;
         };
     };
 
