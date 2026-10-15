@@ -109,10 +109,10 @@
             //                    | GUI |     |     |   |     |     |     |
 
             bindings = <
-&gresc  &kp N1  &kp N2  &kp N3        &kp N4          &kp N5          &kp N6        &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans  &trans  &trans  &trans        &trans          &trans          &kp LEFT      &kp DOWN  &kp UP  &kp RIGHT  &none   &none
-&trans  &none   &none   &bt_prev_out  &bt_next_clear  &boot_mt 0 0    &boot_mt 0 0  &none     &none   &none      &none   &none
-                        &kp LGUI      &trans          &trans          &trans        &trans    &trans
+&gresc  &kp N1  &kp N2  &kp N3        &kp N4          &kp N5      &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans  &trans  &trans  &trans        &trans          &trans      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none   &none
+&trans  &none   &none   &bt_prev_out  &bt_next_clear  &boot_mt    &boot_mt  &none     &none   &none      &none   &none
+                        &kp LGUI      &trans          &trans      &trans    &trans    &trans
             >;
 
             label = "Lowered";
