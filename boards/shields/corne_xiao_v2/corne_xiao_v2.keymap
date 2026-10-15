@@ -47,7 +47,7 @@
             label = "BOOT_MT";
             bindings = <&soft_off>, <&bootloader>;
 
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             flavor = "hold-preferred";
@@ -59,7 +59,7 @@
             label = "BT_PREV_OUT";
             bindings = <&out OUT_TOG>, <&bt BT_PRV>;
 
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
@@ -71,7 +71,7 @@
             label = "BT_NEXT_CLEAR";
             bindings = <&bt BT_CLR>, <&bt BT_NXT>;
 
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
@@ -109,10 +109,10 @@
             //                    | GUI |     |     |   |     |     |     |
 
             bindings = <
-&gresc  &kp N1  &kp N2  &kp N3        &kp N4          &kp N5      &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans  &trans  &trans  &trans        &trans          &trans      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none   &none
-&trans  &none   &none   &bt_prev_out  &bt_next_clear  &boot_mt    &boot_mt  &none     &none   &none      &none   &none
-                        &kp LGUI      &trans          &trans      &trans    &trans    &trans
+&gresc  &kp N1  &kp N2  &kp N3            &kp N4              &kp N5          &kp N6        &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans  &trans  &trans  &trans            &trans              &trans          &kp LEFT      &kp DOWN  &kp UP  &kp RIGHT  &none   &none
+&trans  &none   &none   &bt_prev_out 0 0  &bt_next_clear 0 0  &boot_mt 0 0    &boot_mt 0 0  &none     &none   &none      &none   &none
+                        &kp LGUI          &trans              &trans          &trans        &trans    &trans
             >;
 
             label = "Lowered";
