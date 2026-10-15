@@ -13,7 +13,7 @@
 
 nice_view_spi: &spi2 {
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&xiao_d 9 GPIO_ACTIVE_HIGH>;
+    cs-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;
     clock-frequency = <4000000>;
 };
 
