@@ -4,18 +4,18 @@ manifest:
       url-base: https://github.com/zmkfirmware
 #    - name: caksoylar
 #      url-base: https://github.com/caksoylar
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+    - name: tokyo2006
+      url-base: https://github.com/tokyo2006
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: main
       import: app/west.yml
 #    - name: zmk-rgbled-widget
 #      remote: caksoylar
 #      revision: main
     - name: zmk-nice-oled
-      remote: mctechnology17
+      remote: tokyo2006
       revision: main
   self:
     path: config
