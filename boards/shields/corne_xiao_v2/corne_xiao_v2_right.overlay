@@ -26,7 +26,7 @@
         compatible = "cirque,pinnacle2";
         reg = <0x2a>;
         status = "okay";
-        data-ready-gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        data-ready-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
         sensitivity = "4x";
         sleep-mode-enable;
