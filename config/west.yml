@@ -17,5 +17,8 @@ manifest:
     - name: zmk-nice-oled
       remote: tokyo2006
       revision: main
+    - name: cirque-input-module
+      remote: tokyo2006
+      revision: main
   self:
     path: config
