@@ -19,7 +19,7 @@
         ;
 };
 
-&i2c0 {
+&xiao_i2c {
     status = "okay";
 
     glidepoint: glidepoint@2a {
