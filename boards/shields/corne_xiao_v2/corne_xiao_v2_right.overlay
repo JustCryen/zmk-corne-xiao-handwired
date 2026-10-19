@@ -19,6 +19,23 @@
         ;
 };
 
+&i2c0 {
+    status = "okay";
+
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+
+        sensitivity = "4x";
+        sleep;
+    };
+};
+
+&glidepoint_split {
+    device = <&glidepoint>;
+};
+
 // &right_encoder {
 //     status = "okay";
 // };
