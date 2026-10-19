@@ -28,7 +28,7 @@
         status = "okay";
 
         sensitivity = "4x";
-        sleep;
+        sleep-mode-enable;
     };
 };
 
