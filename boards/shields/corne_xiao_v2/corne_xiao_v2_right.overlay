@@ -23,13 +23,13 @@
     status = "okay";
 
     glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle2";
+        compatible = "cirque,pinnacle";
         reg = <0x2a>;
         status = "okay";
 //        data-ready-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         sensitivity = "4x";
-        sleep-mode-enable;
+//        sleep-mode-enable;
     };
 };
 
