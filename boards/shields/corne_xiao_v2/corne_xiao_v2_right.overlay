@@ -36,12 +36,17 @@
         absolute-touch-min-z = <3>;
         absolute-right-edge-scroll-enable;
         absolute-top-edge-scroll-enable;
+        absolute-scroll-zone = <200>;
         primary-tap-enable;
         absolute-tap-max-ms = <200>;
         absolute-tap-max-movement = <80>;
         absolute-tap-drag-enable;
         absolute-tap-drag-timeout-ms = <300>;
         absolute-tap-drag-max-movement = <50>;
+        absolute-secondary-tap-area-width = <80>;
+        absolute-secondary-tap-area-height = <80>;
+        absolute-aux-tap-area-width = <80>;
+        absolute-aux-tap-area-height = <80>;   
         sleep-mode-enable;
     };
 };
