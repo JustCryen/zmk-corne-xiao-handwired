@@ -52,6 +52,10 @@ nice_view_spi: &spi2 {
         tick      = <8>;
         handoff-ms = <100>;
     };
+    trackball_shift: trackball-shift {
+        compatible = "zmk,trackball-shift";
+        default-device-angle-deg = <60>;
+    };
 };
 
 &zip_inertia {
@@ -65,7 +69,7 @@ nice_view_spi: &spi2 {
 
 &glidepoint_listener {
     status = "okay";
-    input-processors = <&zip_inertia>, <&scroll_inertia>;
+    input-processors = <&trackball_shift>, <&zip_inertia>, <&scroll_inertia>;
 };
 
 // &left_encoder {
