@@ -9,7 +9,7 @@ manifest:
     - name: amgskobo
       url-base: https://github.com/amgskobo
     - name: 8en6
-      ufl-base: https://github.com/8en6
+      url-base: https://github.com/8en6
   projects:
     - name: zmk
       remote: zmkfirmware
