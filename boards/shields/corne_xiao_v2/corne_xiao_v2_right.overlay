@@ -23,7 +23,7 @@
     status = "okay";
 
     glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
+        compatible = "cirque,pinnacle2";
         reg = <0x2a>;
         status = "okay";
         data-ready-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
@@ -31,7 +31,7 @@
         sensitivity = "2x";
         swap-xy;
         invert-x;
-//        sleep-mode-enable;
+        sleep-mode-enable;
     };
 };
 
