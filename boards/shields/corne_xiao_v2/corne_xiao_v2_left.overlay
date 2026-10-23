@@ -61,11 +61,6 @@ nice_view_spi: &spi2 {
     move-report-interval-ms = <16>;
     move-threshold-start = <12>;
     move-threshold-stop = <1>;
-
-    scroll-decay-factor-int = <85>;
-    scroll-report-interval-ms = <65>;
-    scroll-threshold-start = <2>;
-    scroll-threshold-stop = <0>;
 };
 
 &glidepoint_listener {
