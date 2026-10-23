@@ -31,6 +31,12 @@
         sensitivity = "2x";
         swap-xy;
         invert-x;
+        data-mode = "absolute";
+        absolute-relative-divisor = <4>;
+        absolute-edge-motion-enable;
+        absolute-right-edge-scroll-enable;
+        absolute-top-edge-scroll-enable;
+        primary-tap-enable;
         sleep-mode-enable;
     };
 };
