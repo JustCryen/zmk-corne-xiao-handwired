@@ -38,8 +38,8 @@
         absolute-right-edge-scroll-enable;
         absolute-top-edge-scroll-enable;
         primary-tap-enable;
-        absolute-tap-max-ms = <150>;
-        absolute-tap-max-movement = <30>;
+        absolute-tap-max-ms = <200>;
+        absolute-tap-max-movement = <80>;
         absolute-tap-drag-enable;
         absolute-tap-drag-timeout-ms = <300>;
         absolute-tap-drag-max-movement = <50>;
