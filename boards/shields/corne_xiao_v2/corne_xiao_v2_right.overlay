@@ -43,10 +43,10 @@
         absolute-tap-drag-enable;
         absolute-tap-drag-timeout-ms = <300>;
         absolute-tap-drag-max-movement = <50>;
-        absolute-secondary-tap-area-width = <80>;
-        absolute-secondary-tap-area-height = <80>;
-        absolute-aux-tap-area-width = <80>;
-        absolute-aux-tap-area-height = <80>;   
+        absolute-secondary-tap-area-width = <100>;
+        absolute-secondary-tap-area-height = <100>;
+        absolute-aux-tap-area-width = <100>;
+        absolute-aux-tap-area-height = <100>;   
         sleep-mode-enable;
     };
 };
