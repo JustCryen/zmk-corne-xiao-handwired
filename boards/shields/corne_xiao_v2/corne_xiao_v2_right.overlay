@@ -28,7 +28,7 @@
         status = "okay";
         data-ready-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "4x";
+        sensitivity = "8x";
 //        sleep-mode-enable;
     };
 };
