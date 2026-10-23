@@ -29,6 +29,8 @@
         data-ready-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "2x";
+        swap-xy;
+        invert-x;
 //        sleep-mode-enable;
     };
 };
