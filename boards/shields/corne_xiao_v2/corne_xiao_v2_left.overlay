@@ -36,7 +36,8 @@ nice_view_spi: &spi2 {
     clock-frequency = <4000000>;
 };
 
-&zip_inertia {
+zip_inertia: zip_inertia {
+    compatible = "zmk,input-processor-inertia";
     trigger-ms = <35>;
 
     move-decay-factor-int = <90>;
