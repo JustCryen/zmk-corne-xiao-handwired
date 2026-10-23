@@ -6,6 +6,8 @@ manifest:
 #      url-base: https://github.com/caksoylar
     - name: tokyo2006
       url-base: https://github.com/tokyo2006
+    - name: amgskobo
+      url-base: https://github.com/amgskobo
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,6 +21,9 @@ manifest:
       revision: main
     - name: cirque-input-module
       remote: tokyo2006
+      revision: main
+    - name: zmk-input-inertia
+      remote: amgskobo
       revision: main
   self:
     path: config
