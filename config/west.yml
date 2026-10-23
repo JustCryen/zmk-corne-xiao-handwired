@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/tokyo2006
     - name: amgskobo
       url-base: https://github.com/amgskobo
+    - name: 8en6
+      ufl-base: https://github.com/8en6
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -24,6 +26,9 @@ manifest:
       revision: main
     - name: zmk-input-inertia
       remote: amgskobo
+      revision: main
+    - name: zmk-input-processor-scroll-inertia
+      remote: 8en6
       revision: main
   self:
     path: config
