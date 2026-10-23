@@ -28,15 +28,19 @@
         status = "okay";
         data-ready-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "2x";
+        sensitivity = "1x";
         swap-xy;
         invert-x;
         data-mode = "absolute";
         absolute-relative-divisor = <4>;
+        absolute-touch-min-z = <1>;
         absolute-edge-motion-enable;
         absolute-right-edge-scroll-enable;
         absolute-top-edge-scroll-enable;
         primary-tap-enable;
+        absolute-tap-drag-enable;
+        absolute-tap-drag-timeout-ms = <300>;
+        absolute-tap-drag-max-movement = <50>;
         sleep-mode-enable;
     };
 };
