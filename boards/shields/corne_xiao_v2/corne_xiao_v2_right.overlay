@@ -33,11 +33,13 @@
         invert-x;
         data-mode = "absolute";
         absolute-relative-divisor = <4>;
-        absolute-touch-min-z = <1>;
+        absolute-touch-min-z = <2>;
         absolute-edge-motion-enable;
         absolute-right-edge-scroll-enable;
         absolute-top-edge-scroll-enable;
         primary-tap-enable;
+        absolute-tap-max-ms = <150>;
+        absolute-tap-max-movement = <30>;
         absolute-tap-drag-enable;
         absolute-tap-drag-timeout-ms = <300>;
         absolute-tap-drag-max-movement = <50>;
