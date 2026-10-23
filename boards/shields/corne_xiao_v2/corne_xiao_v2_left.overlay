@@ -37,6 +37,23 @@ nice_view_spi: &spi2 {
     clock-frequency = <4000000>;
 };
 
+/ {
+    scroll_inertia: scroll_inertia {
+        compatible = "zmk,input-processor-scroll-inertia";
+        #input-processor-cells = <0>;
+
+        axis      = <1>;
+        start     = <40>;
+        move      = <80>;
+        release   = <24>;
+        decay-fast = <990>;
+        friction  = <35>;
+        stop      = <7>;
+        tick      = <8>;
+        handoff-ms = <100>;
+    };
+};
+
 &zip_inertia {
     trigger-ms = <35>;
 
