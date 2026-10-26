@@ -55,6 +55,15 @@ nice_view_spi: &spi2 {
     };
 };
 
+&zip_inertia {
+    trigger-ms = <35>;
+
+    move-decay-factor-int = <95>;
+    move-report-interval-ms = <16>;
+    move-threshold-start = <12>;
+    move-threshold-stop = <1>;
+};
+
 &glidepoint_listener {
     status = "okay";
     input-processors = <&zip_inertia>, <&scroll_inertia>;
