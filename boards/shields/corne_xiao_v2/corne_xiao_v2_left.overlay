@@ -53,10 +53,15 @@ nice_view_spi: &spi2 {
         tick      = <8>;
         handoff-ms = <100>;
     };
-};
 
-&zip_trackball_shift {
-    default-device-angle-deg = <60>;
+    input_processors {
+        zip_trackball_shift_custom: zip_trackball_shift_custom {
+            compatible = "zmk,input-processor-trackball-shift";
+            #input-processor-cells = <0>;
+
+            default-device-angle-deg = <60>;
+        };
+    };
 };
 
 &zip_inertia {
@@ -70,7 +75,7 @@ nice_view_spi: &spi2 {
 
 &glidepoint_listener {
     status = "okay";
-    input-processors = <&zip_trackball_shift>, <&zip_inertia>, <&scroll_inertia>;
+    input-processors = <&zip_trackball_shift_custom>, <&zip_inertia>, <&scroll_inertia>;
 };
 
 // &left_encoder {
