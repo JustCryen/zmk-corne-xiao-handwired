@@ -10,8 +10,6 @@ manifest:
       url-base: https://github.com/amgskobo
     - name: 8en6
       url-base: https://github.com/8en6
-    - name: karbou12
-      url-base: https://github.com/karbou12
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -31,9 +29,6 @@ manifest:
       revision: main
     - name: zmk-input-processor-scroll-inertia
       remote: 8en6
-      revision: main
-    - name: zmk-trackball-shift
-      remote: karbou12
       revision: main
   self:
     path: config
