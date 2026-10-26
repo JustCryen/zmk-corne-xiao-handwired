@@ -51,6 +51,8 @@ nice_view_spi: &spi2 {
         stop      = <7>;
         tick      = <8>;
         handoff-ms = <150>;
+        gain      = <450>;
+        blend     = <550>;
     };
 };
 
