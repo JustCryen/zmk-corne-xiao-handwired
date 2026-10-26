@@ -54,6 +54,8 @@ nice_view_spi: &spi2 {
     };
     trackball_shift: trackball-shift {
         compatible = "zmk,trackball-shift";
+        #input-processor-cells = <0>;
+        
         default-device-angle-deg = <60>;
     };
 };
