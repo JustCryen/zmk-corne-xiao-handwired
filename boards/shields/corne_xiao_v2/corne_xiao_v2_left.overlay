@@ -45,12 +45,12 @@ nice_view_spi: &spi2 {
         axis      = <1>;
         start     = <40>;
         move      = <80>;
-        release   = <24>;
+        release   = <16>;
         decay-fast = <990>;
         friction  = <35>;
         stop      = <7>;
         tick      = <8>;
-        handoff-ms = <100>;
+        handoff-ms = <150>;
     };
 };
 
