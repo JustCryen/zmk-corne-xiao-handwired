@@ -1,4 +1,5 @@
 #include "corne_xiao_v2.dtsi"
+#include <input_processors/trackball_shift.dtsi>
 #include <zmk-input-inertia/input/processor/input_inertia.dtsi>
 
 &kscan0 {
