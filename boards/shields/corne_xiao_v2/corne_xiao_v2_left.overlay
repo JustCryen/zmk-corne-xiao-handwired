@@ -1,6 +1,5 @@
 #include "corne_xiao_v2.dtsi"
 #include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
 #include <zmk-input-inertia/input/processor/input_inertia.dtsi>
 
 &kscan0 {
@@ -43,9 +42,13 @@ nice_view_spi: &spi2 {
     scroll_inertia: scroll_inertia {
         compatible = "zmk,input-processor-scroll-inertia";
         #input-processor-cells = <0>;
+        layer     = <1>;
 
         axis      = <1>;
         start     = <40>;
+        scale     = <4>;
+        scale-div = <675>;
+
         move      = <80>;
         release   = <16>;
         decay-fast = <990>;
@@ -74,7 +77,8 @@ nice_view_spi: &spi2 {
     scroll {
         layers = <1>;
         input-processors = <&zip_xy_to_scroll_mapper>,
-                           <&scroll_inertia>;
+                           <&scroll_inertia>,
+                           <&zip_scroll_scaler 4 675>;
     };
 };
 
