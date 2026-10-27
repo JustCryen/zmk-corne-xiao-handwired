@@ -67,7 +67,15 @@ nice_view_spi: &spi2 {
 
 &glidepoint_listener {
     status = "okay";
-    input-processors = <&zip_inertia>, <&scroll_inertia>;
+    input-processors = <&zip_inertia>;
+
+    scroll {
+        layers = <1>;
+        input-processors = <&zip_x_scaler (-1) 1>,
+                           <&zip_y_scaler (-1) 1>,
+                           <&zip_xy_to_scroll_mapper>,
+                           <&scroll_inertia>;
+    };
 };
 
 // &left_encoder {
