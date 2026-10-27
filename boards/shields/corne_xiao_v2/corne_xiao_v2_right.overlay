@@ -28,16 +28,12 @@
         status = "okay";
         data-ready-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "1x";
         swap-xy;
         invert-x;
+        sensitivity = "2x";
         data-mode = "absolute";
         absolute-relative-divisor = <4>;
         absolute-touch-min-z = <4>;
-//        absolute-right-edge-scroll-enable;
-//        absolute-top-edge-scroll-enable;
-//        absolute-scroll-zone = <190>;
-//        absolute-scroll-divisor = <2>;
         primary-tap-enable;
         absolute-tap-max-ms = <200>;
         absolute-tap-max-movement = <80>;
