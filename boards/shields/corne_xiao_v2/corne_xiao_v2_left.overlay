@@ -46,8 +46,8 @@ nice_view_spi: &spi2 {
 
         axis      = <1>;
         start     = <40>;
-        scale     = <4>;
-        scale-div = <675>;
+        scale     = <1>;
+        scale-div = <3>;
 
         move      = <80>;
         release   = <16>;
@@ -78,7 +78,7 @@ nice_view_spi: &spi2 {
         layers = <1>;
         input-processors = <&zip_xy_to_scroll_mapper>,
                            <&scroll_inertia>,
-                           <&zip_scroll_scaler 4 675>;
+                           <&zip_scroll_scaler 1 3>;
     };
 };
 
