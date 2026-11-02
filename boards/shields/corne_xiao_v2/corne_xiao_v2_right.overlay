@@ -30,9 +30,9 @@
 
         swap-xy;
         invert-x;
-        sensitivity = "2x";
+        sensitivity = "1x";
         data-mode = "absolute";
-        absolute-relative-divisor = <8>;
+        absolute-relative-divisor = <6>;
         absolute-touch-min-z = <1>;
         primary-tap-enable;
         absolute-tap-max-ms = <200>;
